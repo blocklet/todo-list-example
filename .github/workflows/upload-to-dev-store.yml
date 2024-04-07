@@ -3,7 +3,6 @@ name: upload-to-test-store
 on:
   push:
     branches:
-      - master
       - main
 
 jobs:
