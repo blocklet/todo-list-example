@@ -25,4 +25,4 @@ yarn dev
 
 ## Get help
 
-If you want to learn more about the development of DID Spaces, You can also refer to [DID Spaces development documentation] (https://www.arcblock.io/docs/did-spaces/en/did-spaces-how-to-guides). No matter what you encounter a problem, we welcome you in our official BBS (https://community.arcblock.io/) initiated discussions.
+If you want to learn more about the development of DID Spaces, You can also refer to [DID Spaces development documentation](https://www.arcblock.io/docs/did-spaces/en/did-spaces-how-to-guides). No matter what you encounter a problem, we welcome you in our [Official BBS](https://community.arcblock.io/) initiated discussions.
