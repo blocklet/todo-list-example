@@ -30,7 +30,8 @@ jobs:
       - name: Upload todo-list example to Test Store
         uses: blocklet/action-workflow@v1
         with:
-          skip-deps: true
+          deps-server-version: beta
+          skip-deps: false
           skip-upload: false
           skip-deploy: true
           skip-release: true
