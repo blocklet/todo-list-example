@@ -1,4 +1,4 @@
-name: upload-to-test-store
+name: upload-to-dev-store
 
 on:
   push:
