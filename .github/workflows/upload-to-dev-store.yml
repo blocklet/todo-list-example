@@ -1,0 +1,41 @@
+name: upload-to-test-store
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    if: "! contains(toJSON(github.event.commits.*.message), '[skip actions]')"
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: pnpm
+
+      - name: Initialize
+        run: pnpm install
+
+      - name: Upload todo-list example to Test Store
+        uses: blocklet/action-workflow@v1
+        with:
+          skip-deps: true
+          skip-upload: false
+          skip-deploy: true
+          skip-release: true
+          bundle-command: npm run bundle
+          store-endpoint: ${{ secrets.STORE_ENDPOINT_DEV }}
+          store-access-token: ${{ secrets.STORE_ACCESS_TOKEN_DEV }}
+          slack-webhook: ${{ secrets.SLACK_WEBHOOK }}
